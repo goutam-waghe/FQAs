@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @font-face {
+      font-family: 'worksens-var';
+      src: url(assets/fonts/WorkSans-VariableFont_wght.ttf);
+    }
+
+    @font-face {
+      font-family: 'semibold';
+      src: url(assets/fonts/static/WorkSans-SemiBold.ttf);
+    }
+
+    @font-face {
+      font-family: 'Regular';
+      src: url(assets/fonts/static/WorkSans-Regular.ttf);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    #main {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      /* background-color: red; */
+    }
+
+    #bgtop {
+      background-image: url(assets/images/background-pattern-desktop.svg);
+
+      width: 100%;
+      height: 40vh;
+    }
+
+    #bgbottom {
+      height: 60vh;
+      width: 100%;
+      background-color: hsl(292, 16%, 49%);
+    }
+
+    #faq {
+      background-color: #fff;
+      padding: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      gap: 10px;
+      border-radius: 15px;
+      max-width: 450px;
+    }
+
+    #faqhadding {
+      display: flex;
+      gap: 20px;
+      font-family: 'worksens-var';
+    }
+
+    #faqhadding h1 {
+      font-size: 2.2rem;
+    }
+
+    #faqhadding img {
+      width: 2rem;
+    }
+
+    .questions-container {
+      display: grid;
+      gap: 20px;
+      font-family: 'semibold';
+      font-size: 0.9rem;
+    }
+
+    .Q-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+      cursor: pointer;
+      /* border: 1px solid #f1f1f1; */
+    }
+
+    .Q-wrapper span:first-child:hover {
+      color: blueviolet;
+    }
+
+    .Q-wrapper span img {
+      width: 25px;
+    }
+
+    .Ans-wrapper {
+      font-size: 0.8rem;
+      font-family: 'Regular';
+      display: none;
+      width: fit-content;
+
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="bgtop">
+
+    </div>
+    <div id="bgbottom">
+
+    </div>
+    <div id="faq">
+      <div id="faqhadding">
+        <img src="assets/images/icon-star.svg" alt="this is star svg">
+        <h1>FAQs</h1>
+      </div>
+      <div class="questions-container">
+        <div class="question" id="question-1">
+          <div class="Q-wrapper">
+            <span>what is frontend mentor , how will it help me ?</span>
+            <span><img src="assets/images/icon-plus.svg" alt=""></span>
+          </div>
+          <div class="Ans-wrapper">The best (and quickest) way to get help on a challenge is in our Discord server.
+            There are thousands of other developers</div>
+
+
+        </div>
+        <div class="question" id="question-2">
+          <div class="Q-wrapper">
+            <span>Is frontend mentor is free ?</span>
+            <span><img src="assets/images/icon-plus.svg" alt=""></span>
+          </div>
+          <div class="Ans-wrapper">The best (and quickest) way to get help on a challenge is in our Discord server.
+            There are thousands of other developers</div>
+        </div>
+        <div class="question" id="question-3">
+          <div class="Q-wrapper">
+            <span>can i use frontend mentor project as major project ?</span>
+            <span><img src="assets/images/icon-plus.svg" alt=""></span>
+          </div>
+          <div class="Ans-wrapper">The best (and quickest) way to get help on a challenge is in our Discord server.
+            There are thousands of other developers</div>
+        </div>
+        <div class="question" id="question-4">
+          <div class="Q-wrapper">
+            <span>How can i get help , if i am stucked on a chellange?</span>
+            <span><img src="assets/images/icon-plus.svg" alt=""></span>
+          </div>
+          <div class="Ans-wrapper">The best (and quickest) way to get help on a challenge is in our Discord server.
+            There are thousands of other developers</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Goutam waghe</a>.
+  </div>
+  <script>
+    const ans = "Lorem ipsum dolor sit amet reprehenderit perferendis at numquam iusto recusandae cumque aut temporibus?"
+    const questionDIV = document.querySelectorAll(".question")
+
+    // console.log(questionDIV);
+    questionDIV.forEach((value) => {
+      value.addEventListener('click', function () {
+        if (value.lastElementChild.style.display == 'none') {
+          value.lastElementChild.style.display = 'block'
+          value.firstElementChild.lastElementChild.firstElementChild.src = "assets/images/icon-minus.svg";
+
+        } else {
+
+          value.lastElementChild.style.display = 'none'
+          value.firstElementChild.lastElementChild.firstElementChild.src = "assets/images/icon-plus.svg";
+        }
+      })
+    })
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

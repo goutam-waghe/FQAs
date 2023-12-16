@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs Page</title>
+    <style>
+        .faq-answer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+        <h3 class="faq-question" onclick="toggleAnswer(this)">Question 1: What is JavaScript?</h3>
+        <p class="faq-answer">JavaScript is a programming language that enables interactive web pages. It is commonly used for client-side scripting to create dynamic content on the user's browser.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-question" onclick="toggleAnswer(this)">Question 2: How can I include JavaScript in my HTML file?</h3>
+        <p class="faq-answer">You can include JavaScript in your HTML file using the `<script>` tag. Place your JavaScript code between the opening `<script>` and closing `</script>` tags.</p>
+    </div>
+
+    <!-- Add more FAQ items as needed -->
+
+    <script>
+        function toggleAnswer(question) {
+            var answer = question.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
